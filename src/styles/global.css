@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+body{
+    font-family: 'Poppins', Arial, sans-serif;
+    font-style: normal;
+}
+
+ /* Estilos para la barra de scroll en WebKit (Chrome, Edge, Safari) */
+ ::-webkit-scrollbar {
+    width: 6px; /* Ancho de la barra de scroll */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la pista */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #8ab3ff; /* Color de la barra de scroll */
+    border-radius: 3px; /* Bordes redondeados */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0043ce; /* Color de la barra de scroll al pasar el mouse */
+  }

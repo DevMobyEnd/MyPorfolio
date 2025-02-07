@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sun, Moon } from 'lucide-react';
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className="fixed w-full top-0 z-50">
-      <nav className="max-w-3xl mx-auto my-4">
-        <div className="backdrop-blur-md bg-white/30 rounded-full px-26 py-2 flex items-center justify-between shadow-lg mx-4">
-          <ul className="flex items-center space-x-6">
+      <nav className="max-w-xl mx-auto my-4"> {/* Ajustado a max-w-xl */}
+        <div
+          className={`rounded-full px-12 py-2 flex items-center justify-between shadow-lg mx-4 transition-all duration-300 ${
+            hasScrolled 
+              ? 'bg-white/30 backdrop-blur-md'  // Al hacer scroll: efecto de vidrio esmerilado
+              : 'bg-transparent shadow-none'    // Al inicio: sin fondo ni sombra
+          }`}
+        >
+          <ul className="flex items-center space-x-4"> {/* Ajustado a space-x-4 */}
             <li>
               <a 
                 href="#proyectos" 
