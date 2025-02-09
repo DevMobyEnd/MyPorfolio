@@ -5,12 +5,19 @@ const About = () => {
   return (
     <section className="max-w-3xl mx-auto px-4 py-16 md:py-24">
       <div className="flex flex-col md:flex-row items-center justify-between">
-        {/* Contenedor de la foto */}
-        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-8 md:mb-0 md:mr-8">
+        {/* Contenedor de las fotos */}
+        <div className="relative w-64 h-48 md:w-80 md:h-80 rounded-full overflow-hidden mb-8 md:mb-0 md:mr-8 -ml-8">
+          {/* Primera imagen */}
           <img
-            src="/JhonnyTorres.jpeg" // Cambia esta ruta por la correcta
+            src="/blob.svg" // Cambia esta ruta por la correcta
             alt="Foto de Jhonny Torres"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover absolute top-0 left-0 z-0"
+          />
+          {/* Segunda imagen */}
+          <img
+            src="/blob (1).svg" // Cambia esta ruta por la correcta
+            alt="Segunda imagen"
+            className="w-full h-full object-cover absolute top-0 left-0 z-10 transform scale-110 -translate-x-4 translate-y-18" // Movemos la segunda imagen a la izquierda
           />
         </div>
 
